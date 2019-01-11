@@ -1,0 +1,25 @@
+.App {
+    text-align: center;
+}
+.logo {
+    width: auto;
+    max-width: 300px;
+}
+section {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 80vh;
+    text-align: center;
+}
+h2 {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+}
+label {
+    margin: 0 auto 2em !important;
+    text-align: center;
+    display: block !important;
+    width: auto !important;
+}
