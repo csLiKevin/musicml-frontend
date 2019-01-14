@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { FacebookProvider, LoginButton } from 'react-facebook'
-import Button from '@material-ui/core/Button'
 var AWS = require("aws-sdk")
-var S3 = require('aws-sdk/clients/s3')
 
 class Facebook extends Component {
 
@@ -15,8 +13,8 @@ class Facebook extends Component {
         AWS.config.update({
             region: 'us-east-1',
             credentials: {
-                accessKeyId: 'AKIAIODIZTQE26XO7CIA',
-                secretAccessKey: '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'
+                accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
+                secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY
             }
         })
     }
@@ -47,7 +45,7 @@ class Facebook extends Component {
   render() {
     return (
       <div className="facebook-login">
-        <FacebookProvider appId="303498723488562">
+        <FacebookProvider appId={process.env.REACT_APP_FB_APP_ID}>
             {
                 this.props.status ? null :
                     <LoginButton
